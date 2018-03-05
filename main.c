@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 #include "mymath.h"
-//#include "add.h"
-//#include "sub.h"
+#include "sfunc1.h"
+#include "sfunc2.h"
 
 int main(int argc,char **argv)
 {
@@ -12,4 +12,6 @@ int main(int argc,char **argv)
 	int c=math_add(a,b);	
 	int d=math_sub(b,a);
 	printf("a=%d,b=%d,c=%d,d=%d\n",a,b,c,d);
+	sfunc1();
+	sfunc2();
 }

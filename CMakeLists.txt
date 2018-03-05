@@ -3,20 +3,24 @@ project(Main)
 message(${CMAKE_SYSTEM_NAME})
 message(${CMAKE_SYSTEM_PROCESSOR})
 
-SET(MY_TARGET main)
-SET(EXTRA_LIBS ${EXTRA_LIBS} math)
+set(MY_TARGET main)
+set(EXTRA_LIBS ${EXTRA_LIBS} math sfunc)
 
-AUX_SOURCE_DIRECTORY(. SRC_LIST)
+aux_source_directory(. SRC_LIST)
 
-ADD_SUBDIRECTORY(math)
+add_subdirectory(func)
+add_subdirectory(math)
 
-INCLUDE_DIRECTORIES(
+include_directories(
 	. 
 	${PROJECT_SOURCE_DIR}/math
 	${PROJECT_SOURCE_DIR}/math/add
-	${PROJECT_SOURCE_DIR}/math/sub)
+	${PROJECT_SOURCE_DIR}/math/sub
+	${PROJECT_SOURCE_DIR}/func/subfunc1
+	${PROJECT_SOURCE_DIR}/func/subfunc2
+	)
 
-ADD_EXECUTABLE(${MY_TARGET} ${SRC_LIST})
+add_executable(${MY_TARGET} ${SRC_LIST})
 
-TARGET_LINK_LIBRARIES(${MY_TARGET} ${EXTRA_LIBS})
+target_link_libraries(${MY_TARGET} ${EXTRA_LIBS})
 

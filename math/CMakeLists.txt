@@ -16,5 +16,5 @@ include_directories(
 	./sub
 )
 
-ADD_LIBRARY(math ${math_src_list})
+add_library(math ${math_src_list})
 target_link_libraries(math add sub)
